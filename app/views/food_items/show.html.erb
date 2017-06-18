@@ -1,0 +1,38 @@
+<table>
+	<thead>
+		<th>Item</th>
+		<th>Order #</th>
+		<th>Price</th>
+		<th>Unit size</th>
+		<th>Price/Unit</th>
+		<th>Locations</th>
+	</thead>
+	
+	<tbody>
+		<td><%= @food_item.name %></td>
+		<td><%= @food_item.orderNo %></td>
+		<td>$<%= @food_item.unitPrice %></td>
+		<td>
+			<%= @food_item.unitSize %>
+			<% units = case @food_item.unitType %>
+				<% when 1 %>
+					fl. oz.
+				<% when 2 %>
+					gal.
+				<% when 3 %>
+					l
+				<% when 4 %>
+					oz.
+				<% when 5 %>
+					lb.
+				<% when 6 %>
+					g
+			<% end %>
+		</td>
+		<td>
+			$<%= @food_item.unitPrice / @food_item.unitSize %> /
+			<%= units %>
+		</td>
+		<td><%= @food_item.locations %></td>
+	</tbody>
+</table>

@@ -14,6 +14,9 @@ class FoodItemsController < ApplicationController
   def create
     @food_item = FoodItem.new(food_item_params)
     
+    @food_item.restaurant = 1
+    @food_item.pricePerUnit = @food_item.unitPrice / @food_item.unitSize 
+    
     if @food_item.save
       redirect_to @food_item
      else

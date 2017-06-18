@@ -13,8 +13,8 @@
 			<td><%= f.name %></td>
 			<td><%= f.orderNo %></td>
 			<td><%= f.unitPrice %></td>
-			<td><%= f.unitSize %></td>
 			<td>
+				<%= f.unitSize %>
 				<% case f.unitType %>
 					<% when 1 %>
 						fl. oz.
@@ -30,6 +30,8 @@
 						g
 				<% end %>
 			</td>
+			<td><%= f.pricePerUnit %></td>
+			<td><%= f.locations %></td>
 		<% end %>
 	</tbody>
 
