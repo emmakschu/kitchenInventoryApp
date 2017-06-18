@@ -32,9 +32,11 @@ class FoodItemsController < ApplicationController
   def update
     @food_item = FoodItem.find(params[:id])
     
+    @food_item.pricePerUnit = @food_item.unitPrice / @food_item.unitSize 
+    
     if @food_item.update(food_item_params)
       redirect_to @food_item
-     else
+    else
        render 'edit'
     end
   end
