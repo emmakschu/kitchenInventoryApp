@@ -10,12 +10,13 @@
 	
 	<tbody>
 		<% @food_items.each do |f| %>
+		<tr>
 			<td><%= f.name %></td>
 			<td><%= f.orderNo %></td>
-			<td><%= f.unitPrice %></td>
+			<td>$<%= f.unitPrice %></td>
 			<td>
 				<%= f.unitSize %>
-				<% case f.unitType %>
+				<% units = case f.unitType %>
 					<% when 1 %>
 						fl. oz.
 					<% when 2 %>
@@ -25,13 +26,14 @@
 					<% when 4 %>
 						oz.
 					<% when 5 %>
-						lbs.
+						lb.
 					<% when 6 %>
 						g
 				<% end %>
 			</td>
-			<td><%= f.pricePerUnit %></td>
+			<td>$<%= f.pricePerUnit %> / <%= units %></td>
 			<td><%= f.locations %></td>
+		</tr>
 		<% end %>
 	</tbody>
 
