@@ -3,7 +3,7 @@
 	<p>Item name: <%= f.text_field :name %></p>
 	<p>Order #: <%= f.text_field :orderNo %></p>
 	<p>Price: <%= f.number_field :unitPrice, :step => 0.01 %></p>
-	<p>Unit Size: <%= f.number_field :unitSize, step: :any %> &nbsp;
+	<p>Unit Size: <%= f.number_field :unitSize, :step => 0.00001 %> &nbsp;
 		<%= f.select :unitType, options_for_select([
 			['fl oz.', 1],
 			['gal.', 2],

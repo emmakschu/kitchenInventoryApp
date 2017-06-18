@@ -12,14 +12,14 @@
 
 ActiveRecord::Schema.define(version: 20170618094311) do
 
-  create_table "foodProducts", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "food_items", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer "restaurant"
     t.string "name", limit: 64
     t.string "orderNo", limit: 64
-    t.decimal "unitPrice", precision: 10
+    t.decimal "unitPrice", precision: 65, scale: 30
     t.integer "unitType"
-    t.decimal "unitSize", precision: 10
-    t.decimal "pricePerUnit", precision: 10
+    t.decimal "unitSize", precision: 65, scale: 30
+    t.decimal "pricePerUnit", precision: 65, scale: 30
     t.string "locations", limit: 256
     t.datetime "created_at"
     t.datetime "updated_at"
