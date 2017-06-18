@@ -1,0 +1,36 @@
+<table class="alt-color">
+	<thead>
+		<th>Item</th>
+		<th>Order #</th>
+		<th>Price</th>
+		<th>Unit Size</th>
+		<th>Price/Unit</th>
+		<th>Location(s)</th>
+	</thead>
+	
+	<tbody>
+		<% @food_items.each do |f| %>
+			<td><%= f.name %></td>
+			<td><%= f.orderNo %></td>
+			<td><%= f.unitPrice %></td>
+			<td><%= f.unitSize %></td>
+			<td>
+				<% case f.unitType %>
+					<% when 1 %>
+						fl. oz.
+					<% when 2 %>
+						gal.
+					<% when 3 %>
+						l
+					<% when 4 %>
+						oz.
+					<% when 5 %>
+						lbs.
+					<% when 6 %>
+						g
+				<% end %>
+			</td>
+		<% end %>
+	</tbody>
+
+</table>
