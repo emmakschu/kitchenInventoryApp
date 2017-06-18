@@ -39,19 +39,14 @@ ActiveRecord::Schema.define(version: 20170618231740) do
     t.datetime "updated_at"
   end
 
-  create_table "unitConversions", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "unit_conversions", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "name", limit: 64
-    t.decimal "toFlOz", precision: 10
-    t.decimal "toGallons", precision: 10
-    t.decimal "toLiters", precision: 10
-    t.decimal "toWtOzs", precision: 10
-    t.decimal "toPounds", precision: 10
-    t.decimal "toGrams", precision: 10
-  end
-
-  create_table "unit_conversions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.decimal "toFlOz", precision: 65, scale: 30
+    t.decimal "toGallons", precision: 65, scale: 30
+    t.decimal "toLiters", precision: 65, scale: 30
+    t.decimal "toWtOzs", precision: 65, scale: 30
+    t.decimal "toPounds", precision: 65, scale: 30
+    t.decimal "toGrams", precision: 65, scale: 30
   end
 
   create_table "users", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
