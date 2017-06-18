@@ -3,6 +3,7 @@
 <%= form_for @food_item do |f| %>
 
 	<p>Item name: <%= f.text_field :name %></p>
+	<p>Distributor: <%= f.text_field :distributor %></p>
 	<p>Order #: <%= f.text_field :orderNo %></p>
 	<p>Price: <%= f.number_field :unitPrice, :step => 0.01 %></p>
 	<p>Unit Size: <%= f.number_field :unitSize, :step => 0.00001 %> &nbsp;

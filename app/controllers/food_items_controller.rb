@@ -47,6 +47,7 @@ class FoodItemsController < ApplicationController
       params.require(:food_item).permit(:id,
                                         :restaurant,
                                         :name,
+                                        :distributor,
                                         :orderNo,
                                         :unitPrice,
                                         :unitType,

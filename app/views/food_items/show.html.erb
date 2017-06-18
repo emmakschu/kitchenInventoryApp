@@ -1,6 +1,7 @@
 <table>
 	<thead>
 		<th>Item</th>
+		<th>Distributor</th>
 		<th>Order #</th>
 		<th>Price</th>
 		<th>Unit size</th>
@@ -10,6 +11,7 @@
 	
 	<tbody>
 		<td><%= @food_item.name %></td>
+		<td><%= @food_item.distributor %></td>
 		<td><%= @food_item.orderNo %></td>
 		<td>$<%= @food_item.unitPrice %></td>
 		<td>
@@ -29,10 +31,7 @@
 					g
 			<% end %>
 		</td>
-		<td>
-			$<%= @food_item.unitPrice / @food_item.unitSize %> /
-			<%= units %>
-		</td>
+		<td>$<%= @food_item.pricePerUnit %> / <%= units %></td>
 		<td><%= @food_item.locations %></td>
 	</tbody>
 </table>

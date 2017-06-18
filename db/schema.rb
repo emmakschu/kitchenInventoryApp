@@ -10,12 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170618094311) do
+ActiveRecord::Schema.define(version: 20170618231740) do
+
+  create_table "conversion_factors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "food_items", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer "restaurant"
     t.string "name", limit: 64
     t.string "orderNo", limit: 64
+    t.string "distributor", limit: 64
     t.decimal "unitPrice", precision: 65, scale: 30
     t.integer "unitType"
     t.decimal "unitSize", precision: 65, scale: 30
@@ -41,6 +47,11 @@ ActiveRecord::Schema.define(version: 20170618094311) do
     t.decimal "toWtOzs", precision: 10
     t.decimal "toPounds", precision: 10
     t.decimal "toGrams", precision: 10
+  end
+
+  create_table "unit_conversions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|

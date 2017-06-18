@@ -3,6 +3,7 @@
 <table class="alt-color">
 	<thead>
 		<th>Item</th>
+		<th>Distributor</th>
 		<th>Order #</th>
 		<th>Price</th>
 		<th>Unit Size</th>
@@ -14,6 +15,7 @@
 		<% @food_items.each do |f| %>
 		<tr>
 			<td><%= f.name %></td>
+			<td><%= f.distributor %></td>
 			<td><%= f.orderNo %></td>
 			<td>$<%= f.unitPrice %></td>
 			<td>
