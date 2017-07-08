@@ -55,6 +55,7 @@ class FoodItemsController < ApplicationController
                                         :pricePerUnit,
                                         :locations,
                                         :created_at,
-                                        :updated_at)
+                                        :updated_at
+                                        :in_stock)
     end
 end
